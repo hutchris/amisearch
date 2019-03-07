@@ -13,3 +13,8 @@ id: ami-09d522e6fa223221b
 Command line options:
 --field -f changes the field that is searched. defaults to description
 --region -r changes the region that is searched. defaults to all
+
+Requirements:
+python3
+boto3
+aws cli credentials configured with read access to ec2
