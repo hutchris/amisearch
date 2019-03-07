@@ -108,11 +108,11 @@ Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81b
 Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
 id: ami-0ed93d1d7ab0da107
 ```
-Command line options:
---field -f changes the field that is searched. defaults to description
---region -r changes the region that is searched. defaults to all
+Command line options:  
+--field -f changes the field that is searched. defaults to description  
+--region -r changes the region that is searched. defaults to all  
 
-Requirements:
-python3
-boto3
-aws cli credentials configured with read access to ec2
+Requirements:  
+python3  
+boto3  
+aws cli credentials configured with read access to ec2  
