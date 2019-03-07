@@ -9,21 +9,20 @@ parser.add_argument("--region", "-r", default="*", help="enter the region to sea
 
 args = parser.parse_args()
 
-ec2 = boto3.client('ec2')
-
 if args.region == "*":
+    ec2 = boto3.client('ec2')
     regions = ec2.describe_regions()
     for region in regions['Regions']:
-        tempec2 = boto3.client('ec2',region_name=region['RegionName'])
-        images = tempec2.describe_images(Filters=[{'Name': args.field,'Values': [args.value,]}])
+        regec2 = boto3.client('ec2',region_name=region['RegionName'])
+        images = regec2.describe_images(Filters=[{'Name': args.field,'Values': [args.value,]}])
         print('\n\n'+region['RegionName'])
         for image in images['Images']:
             print('Name: '+image['Name'])
             print('Description: '+image['Description'])
             print('id: '+image['ImageId'])
 else:
-    tempec2 = boto3.client('ec2',region_name=args.region)
-    images = tempec2.describe_images(Filters=[{'Name': args.field,'Values': [args.value,]}])
+    regec2 = boto3.client('ec2',region_name=args.region)
+    images = regec2.describe_images(Filters=[{'Name': args.field,'Values': [args.value,]}])
     for image in images['Images']:
         print('Name: '+image['Name'])
         print('Description: '+image['Description'])
