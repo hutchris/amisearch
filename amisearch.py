@@ -3,7 +3,7 @@ import argparse
 import boto3
 
 parser = argparse.ArgumentParser()
-parser.add_argument("value", help="enter a search term. See AWS ")
+parser.add_argument("value", help="enter a search term. See AWS documentation for wildcard syntax")
 parser.add_argument("--field", "-f", default="description", help="enter the ami field you wish to search in. Default: description. Good alternative: name")
 parser.add_argument("--region", "-r", default="*", help="enter the region to search for amis in. default: all")
 
