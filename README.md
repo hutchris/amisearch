@@ -1,116 +1,52 @@
 # amisearch
-Searches across all AWS AMI Images in all regions
+Searches across all AWS AMI Images in all regions.
 
 
-usage:
+Example brief results:
 ```
-python3 amisearch.py *FortiAnalyzer*6.0.4* -r us-east-1
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-09d522e6fa223221b 
+amisearch.py "*FortiGate*6.2.3*" -f name -r ap-southeast-2
+Name: FortiGate-VM64-AWS build1066 (6.2.3) GA-e5936f4a-0d69-479f-919c-d5e158bd4d12-ami-00364bb191729739b.4
+Description: FortiGate-VM64-AWS build1066 (6.2.3) GA
+id: ami-003c22d372f903dc6
+-------------------------------------------------
+Name: FortiGate-VM64-AWSONDEMAND build8270 (6.2.3) SB-3124a694-441c-4ff1-8bf7-4d153be424a6-ami-0e2c276bcf8d36c0e.4
+Description: FortiGate-VM64-AWSONDEMAND build8270 (6.2.3) SB
+id: ami-05708d1e433accc2a
+-------------------------------------------------
+Name: FortiGate-VM64-AWSONDEMAND build1066 (6.2.3) GA-3124a694-441c-4ff1-8bf7-4d153be424a6-ami-07d8d9716be7d7aa1.4
+Description: FortiGate-VM64-AWSONDEMAND build1066 (6.2.3) GA
+id: ami-0a980e6dca63b0eb6
+-------------------------------------------------
+```  
+Example verbose results:
 ```
-```
-python3 amisearch.py "FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA"
-
-
-eu-north-1
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-5488012a
-
-
-ap-south-1
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-0a19a80b31345931f
-
-
-eu-west-3
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-0131a6099bb5556bc
-
-
-eu-west-2
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-03f928dc23e7e5c0f
-
-
-eu-west-1
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-0bdda53014212536f
-
-
-ap-northeast-2
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-021c256f17a30e7a9
-
-
-ap-northeast-1
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-0888a9054bb60432d
-
-
-sa-east-1
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-09aecfe1a0d9f5e80
-
-
-ca-central-1
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-06a23d80ad1955054
-
-
-ap-southeast-1
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-05a2cec1135a8e112
-
-
-ap-southeast-2
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-0874857d61c03283a
-
-
-eu-central-1
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-0a95798a62c2ef00e
-
-
-us-east-1
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-09d522e6fa223221b
-
-
-us-east-2
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-0e35e7d1a6281fe67
-
-
-us-west-1
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-0b7bf6323dacf83ca
-
-
-us-west-2
-Name: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA-137ae5b3-1f45-4ebd-81bf-93687e21d93e-ami-0901ac5a302e36a2a.4
-Description: FortiAnalyzer VM64-AWSOnDemand build0292 (6.0.4) GA
-id: ami-0ed93d1d7ab0da107
+amisearch.py "ami-003c22d372f903dc6" -f image-id -r ap-southeast-2 -v
+Architecture: x86_64
+CreationDate: 2019-12-20T19:02:46.000Z
+ImageId: ami-003c22d372f903dc6
+ImageLocation: aws-marketplace/FortiGate-VM64-AWS build1066 (6.2.3) GA-e5936f4a-0d69-479f-919c-d5e158bd4d12-ami-00364bb191729739b.4
+ImageType: machine
+Public: True
+OwnerId: 679593333241
+ProductCodes: [{'ProductCodeId': 'dlaioq277sglm5mw1y1dmeuqa', 'ProductCodeType': 'marketplace'}]
+State: available
+BlockDeviceMappings: [{'DeviceName': '/dev/sda1', 'Ebs': {'DeleteOnTermination': True, 'SnapshotId': 'snap-01a91c514535c0496', 'VolumeSize': 2, 'VolumeType': 'gp2', 'Encrypted': False}}, {'DeviceName': '/dev/sdb', 'Ebs': {'DeleteOnTermination': True, 'VolumeSize': 30, 'VolumeType': 'gp2', 'Encrypted': False}}]
+Description: FortiGate-VM64-AWS build1066 (6.2.3) GA
+EnaSupport: True
+Hypervisor: xen
+ImageOwnerAlias: aws-marketplace
+Name: FortiGate-VM64-AWS build1066 (6.2.3) GA-e5936f4a-0d69-479f-919c-d5e158bd4d12-ami-00364bb191729739b.4
+RootDeviceName: /dev/sda1
+RootDeviceType: ebs
+SriovNetSupport: simple
+VirtualizationType: hvm
+-------------------------------------------------
 ```
 Command line options:  
---field -f changes the field that is searched. defaults to description  
+--field -f changes the field that is searched. defaults to name.  
 --region -r changes the region that is searched. defaults to all  
+--printfields -p prints all available search fields
+--verbose -v returns all fields instead of just name, description and image-id
 
 Requirements:  
 python3  
