@@ -62,7 +62,10 @@ elif args.region == "*" and args.value is not None:
                     print(str(k)+': '+str(v))
             else:
                 print('Name: '+image['Name'])
-                print('Description: '+image['Description'])
+                try:
+                    print('Description: '+image['Description'])
+                except KeyError:
+                    print('Description: ')
                 print('id: '+image['ImageId'])
             print('-------------------------------------------------')
 elif args.value is not None:
@@ -74,7 +77,10 @@ elif args.value is not None:
                 print(str(k)+': '+str(v))
         else:
             print('Name: '+image['Name'])
-            print('Description: '+image['Description'])
+            try:
+                print('Description: '+image['Description'])
+            except KeyError:
+                print('Description: ')
             print('id: '+image['ImageId'])
         print('-------------------------------------------------')
 else:
